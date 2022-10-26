@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title> </title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/jquery.scrollgress.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/jquery.slidertron.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+			<link rel="stylesheet" href="css/style-medium.css" />
+			<link rel="stylesheet" href="css/style-large	.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+    
+	<body>
+
+		<!-- Header -->
+		        <header id="header" >
+				<h1><a href="index.html">Kadkhodaei's Research Group at University of Illinois at Chicago (UIC)<span></span> </a></h1> <!--by Html5webtemplates.co.uk-->
+				
+		</header>
+        
+        <header class="majorcenter">
+			<strong><h2>LAMMPS Local Hessian</h2></strong> 
+            
+		</header>
+
+		<!-- Main -->
+			<section id="main" class="wrapper style1">
+			
+				<header class="major">
+					<h2>What is lammps_local_hessian?</h2>
+					<hr style="clear:both;">
+				</header>
+				<p> lammps_local_hessian package consists of two modules for LAMMPS software package: </p>
+				<ol>
+				<li>A compute module <i>partialHessian</i> that calculates the Hessian matrix for a group of atoms during a LAMMPS simulation. This module is a modification to the module developed by Anthony B. Costa, anthony.costa@numericalsolutions.org. Refer to <a target="_blank" href="http://bitbucket.org/numericalsolutions/lammps-hessian">http://bitbucket.org/numericalsolutions/lammps-hessian</a>.</li>
+				<li>A command module <i>hessian</i> that calculates the Hessian for a group of atoms according to the theory introduced in the following paper:<br>
+					Sara Kadkhodaei and Axel van de Walle, "A simple local expression for the prefactor in transition state theory" <br>
+				In this method the partial Hessian is calcualted for a group of atoms while the atoms outside that group are relaxed during this procedure. </li>
+				</ol>
+				<header class="major">
+					<h2>Download</h2>
+					<hr style="clear:both;">
+				</header>
+                        <p>lammps_local_hessian is licensed under GNU General Public License.</p>
+                        <h2>Tar file </h2>	
+                        <ul>  
+                        <li>lammps_local_hessian source code: <a href="./lammps_local_hessian.tar.gz" download>lammps_local_hessian.tar.gz</a>
+                        </ul>
+                        
+               <header class="major">
+					<h2>Citation</h2>
+					<hr style="clear:both;">
+				</header>         
+                <p>Publications making substantial use of lammps_local_hessian modules or its derivatives should cite this software package via the link "http://go.uic.edu/lammps_local_hessian" and the following paper <br>
+                Sara Kadkhodaei and Axel van de Walle, "A simple local expression for the prefactor in transition state theory"
+                </p>
+                <header class="major">
+					<h2>License</h2>
+					<hr style="clear:both;">
+				</header>         
+                <pre>
+LAMMPS_LOCAL_HESSIAN: a package for LAMMPS software to calcualte the effective hessian for a group of atoms
+Copyright (C) 2018  Sara Kadkhodaei sarakad@uic.edu <br>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <a target="_blank" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/></a>.
+				</pre>
+				
+				  <header class="major">
+					<h2>Contact</h2>
+					<hr style="clear:both;">
+				</header> 
+                <p> Sara Kadkhodaei, <a href="mailto:sarakad@uic.edu"> sarakad@uic.edu</a> 
+                    <header class="major">
+					<h2>Add to LAMMPS</h2>
+					<hr style="clear:both;">
+				</header>    
+                <p>Take the following steps to add this package to your compilation of LAMMPS.</p>
+                <ol>
+                <li>Add the folder lammps_local_hessian to the src/ directory of the latest version of LAMMPS.</li>
+                <li>In the makefile add the lammps_local_hessian in the Package variables.</li>
+                <li>make yes-lammps_local_hessian</li>
+                <li>make</li>
+                </ol>
+                        <p> For a detailed instruction on how to add packages to lammps comiplation, refer to LAMMPS manual at 
+<a target="_blank" href="https://lammps.sandia.gov/doc/Build_package.html">https://lammps.sandia.gov/doc/Build_package.html</a>.
+			
+			 <header class="major">
+					<h2>Command line options</h2>
+					<hr style="clear:both;">
+				</header> 
+			 <ul>
+			 <li> For the compute module: <br>
+				<pre><code>compute ID group-ID partialHessian epsilon</code></pre>
+				ID = user-assigned name for the computation<br>
+				group-ID = ID of the group of atoms to perform the computation on<br>
+				partialHessian = style name for this command<br>
+				epsilon = displacement value for the centeral finite difference method<br>
+			</li>
+			<br><br>
+			<li>For the command module:<br>
+				<pre><code>hessian group-ID epsilon etol ftol nsteps maxiter </code></pre>
+				group-ID = ID of the group of atoms to perform the command on<br>
+				epsilon = displacement value for the centeral finite difference method<br>
+				etol = stopping tolerance for energy (energy units) for minimizer<br>
+				ftol = stopping tolerance for force (force units) for minimizer<br>
+				nsteps = # of steps to run for minimizer<br>
+				maxiter = max force evaluations for minimizer<br>
+			</li>
+			<br>
+			<p> ****Caution****<br>
+			     Do not use hessian command in an input file that includes thermo or compute command. Otherwise unexpected errors may arise.
+			</ul>
+			
+			<header class="major">
+			<h2>Sample LAMMPS input</h2>
+			<hr style="clear:both;">
+		</header> 
+			<pre>
+			<code>
+# ------------------------ INITIALIZATION ----------------------------
+units 		metal
+dimension	3
+atom_style      atomic
+atom_modify     map array
+boundary        p p p
+atom_modify	sort 0 0.0
+
+
+# ----------------------- ATOM DEFINITION ----------------------------
+read_data data.initial.min
+
+#define the origin of the circles that encompass the active region 
+variable xo equal (xlo+xhi)/2 
+variable yo equal (ylo+yhi)/2 
+variable zo equal (zlo+zhi)/2 
+
+region          circ1 sphere ${xo} ${yo} ${zo} 9 units box 
+                            
+group active region circ1
+group background subtract all active
+# ------------------------ FORCE FIELDS ------------------------------
+pair_style      eam/alloy
+pair_coeff      * * Ag.eam.alloy Ag
+
+neighbor 2.0 bin
+neigh_modify delay 1 every 1
+
+
+#----------------------calculate the partial Hessian for active region while relaxing the background 
+hessian active 0.015 0.0 1.0e-10 1000 100000 
+
+				</code>
+				</pre>
+			
+		 <header class="major">
+			<h2>Output Hessian array</h2>
+			<hr style="clear:both;">
+		</header> 
+			<ol>
+			<li>For the compute module, "compute ID group-ID partialHessian epsilon", the best practice is to collect partial hessian into a data structure in an external C program, in a coupled simulation where one runs LAMMPS as a library. There are examples of how to do this in the examples/COUPLE directory of LAMMPS, for example, examples/COUPLE/simple/simple.c. 
+				To build LAMMPS as a share library use the tag
+				make mode=shlib</li>
+			<li>The command module "hessian group-ID epsilon etol ftol nsteps maxiter" automatically collects the partial hessian in hessian.out file.</li>
+			</ol>
+			
+			
+			<header class="major">
+			<h2>Future development</h2>
+			<hr style="clear:both;">
+		</header> 
+		<p>Curently these module are designed for serial run. They still can be compiled with mpi but have to be executed on one core. Future improvment will design a parrallel implementation.</p>
+			
+			
+			
+			
+			
+			
+			</section>
+			
+	
+
+
+""
+			
+			
+		<!-- Footer -->
+			<footer id="footer">
+								<span class="copyright">
+					&copy; Copyright. Computational Materials Research Lab (CMRL).
+				</span>
+			</footer>
+
+	</body>
+</html>
